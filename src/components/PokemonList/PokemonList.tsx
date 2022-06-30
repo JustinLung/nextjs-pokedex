@@ -1,3 +1,5 @@
+import styles from './PokemonList.module.css'
+
 interface Props {
     pokemonId?: number
     pokemonName?: string
@@ -7,10 +9,10 @@ interface Props {
 export function PokemonList({ pokemonId, pokemonName, pokemonImage }: Props) {
     return (
         <>
-            <section className="pokemon">
-                <p className="pokemon__number">N° {pokemonId}</p>
-                <h2 className="pokemon__name">{pokemonName}</h2>
-                <img src={pokemonImage} alt={pokemonName} className="pokemon__image" loading="lazy" />
+            <section className={styles.pokemon}>
+                <p className={styles['pokemon__number']}>N° {pokemonId}</p>
+                <h2 className={styles['pokemon__name']}>{pokemonName}</h2>
+                <img src={pokemonImage} alt={pokemonName} className={styles['pokemon__image']} loading="lazy" />
             </section>
         </>
     )

@@ -1,5 +1,6 @@
 import { GetServerSideProps } from "next"
 import { PokemonList } from '../components/PokemonList/PokemonList'
+import styles from './styles/index.module.css'
 import Link from 'next/link'
 
 type Pokemons = {
@@ -7,14 +8,13 @@ type Pokemons = {
 }
 
 function Home({ pokemons }: Pokemons) {
+
   return (
     <>
-      <h1>pokemons</h1>
-
       {pokemons.results.map((pokemon, i) => {
         const pokemonId = i + 1
         return (
-          <div className="pokemon-list" key={pokemon.id}>
+          <div className={styles['pokemon-list']} key={pokemon.id}>
             <Link href={`/pokemon/${pokemonId}`}>
               <a rel="noopener">
                 <PokemonList pokemonId={pokemonId} pokemonName={pokemon.name} pokemonImage={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonId}.png`}></PokemonList>
