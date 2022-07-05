@@ -2,7 +2,8 @@ import { DetailHeader } from '../../components/DetailHeader/DetailHeader'
 import { DetailPokemonImage } from '../../components/DetailPokemonImage/DetailPokemonImage'
 import { DetailStatCard } from '../../components/DetailStatCard/DetailStatCard'
 import { DetailStats } from '../../components/DetailStats/DetailStats'
-
+import { DetailType } from '../../components/DetailType/DetailType'
+import { DetailTypeSection } from '../../components/DetailTypeSection/DetailTypeSection'
 
 type Pokemon = {
     pokemon: any
@@ -21,6 +22,13 @@ function pokemonDetail({ pokemon }: Pokemon) {
                     )
                 })}
             </DetailStats>
+            <DetailTypeSection>
+                {pokemon.types.map((pokemon) => {
+                    return (
+                        <DetailType type={pokemon.type.name} />
+                    )
+                })}
+            </DetailTypeSection>
         </>
     )
 }
