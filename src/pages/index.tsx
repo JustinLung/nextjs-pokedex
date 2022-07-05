@@ -23,7 +23,6 @@ function Home({ pokemons }: Pokemons) {
     });
   }, []);
   return (
-
     <>
       <Header />
       <section className={styles['pokemon-list']}>

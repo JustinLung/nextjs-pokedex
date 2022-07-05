@@ -1,0 +1,14 @@
+.pokemon-detail-header {
+  position: relative;
+}
+
+.pokemon-detail-header__back {
+  position: absolute;
+  top: 1rem;
+}
+.pokemon-detail-header__name-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

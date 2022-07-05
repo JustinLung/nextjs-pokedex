@@ -1,0 +1,13 @@
+.detail-image-container {
+  background-color: var(--color-sapphire);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.8rem;
+  margin-top: 1rem;
+}
+
+.detail-image-container > img {
+  width: 100%;
+}
