@@ -7,10 +7,11 @@ export function Header() {
     <>
       <header className={styles.header}>
         <Link href="/">
-          <a rel="noopener" className={styles['header__link']}>Pokedex</a>
+          <a rel="noopener" className={styles['header__link']}>Pokédex</a>
         </Link>
+        <p className={styles['header__description']}>Search for a Pokémon by name or using its National Pokédex number.</p>
+        <SearchPokemon />
       </header>
-      <SearchPokemon />
     </>
   )
 }

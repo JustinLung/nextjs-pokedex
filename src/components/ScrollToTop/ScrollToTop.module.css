@@ -1,0 +1,22 @@
+.scroll-to-top {
+  all: unset;
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  background-color: var(--color-teal-blue);
+  height: 2.5em;
+  width: 2.5em;
+  border-radius: 10px;
+  cursor: pointer;
+  color: var(--color-white);
+  font-size: 18px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease;
+}
+
+.scroll-to-top > img {
+  width: 70%;
+}

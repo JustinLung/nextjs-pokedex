@@ -1,0 +1,18 @@
+.pokemon {
+  background-color: var(--light-smoke);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pokemon__image {
+  width: 90%;
+  max-width: 8rem;
+  padding: 1rem 0;
+}
+
+.pokemon__number {
+  padding-bottom: 1rem;
+}
