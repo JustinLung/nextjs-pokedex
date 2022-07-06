@@ -24,14 +24,14 @@ function pokemonDetail({ pokemon, pokemonSpecies }: Pokemon) {
             <DetailStats>
                 {pokemon.stats.map((pokemon) => {
                     return (
-                        <DetailStatCard statName={pokemon.stat.name} stat={pokemon.base_stat} />
+                        <DetailStatCard statName={pokemon.stat.name} stat={pokemon.base_stat} key={pokemon.id}/>
                     )
                 })}
             </DetailStats>
             <DetailTypeSection>
                 {pokemon.types.map((pokemon) => {
                     return (
-                        <DetailType type={pokemon.type.name} />
+                        <DetailType type={pokemon.type.name} key={pokemon.id}/>
                     )
                 })}
             </DetailTypeSection>
