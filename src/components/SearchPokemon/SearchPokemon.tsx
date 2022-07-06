@@ -1,13 +1,14 @@
 import styles from './SearchPokemon.module.css'
 import React, { useRef } from 'react';
 
+
 export function SearchPokemon() {
   const searchInput = useRef(null)
 
-  function submitSearch(e) {
+  function submitSearch(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    history.pushState({}, '', `/pokemon/${searchInput?.current?.value}`)
-    location.reload(); 
+    history.pushState({}, '', `/pokemon/${searchInput.current?.value}`)
+    location.reload();
   }
 
   return (
