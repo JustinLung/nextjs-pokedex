@@ -6,7 +6,7 @@ interface Props {
 
 export function DetailStats({ children }: Props) {
     return (
-        <section style={{ margin: "1rem" }}>
+        <section style={{ marginTop: "1rem" }}>
             <h2>Stats</h2>
             {children}
         </section>
