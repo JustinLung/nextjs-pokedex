@@ -6,6 +6,7 @@ import { DetailType } from '../../components/DetailType/DetailType'
 import { DetailTypeSection } from '../../components/DetailTypeSection/DetailTypeSection'
 import { DetailDescription } from '../../components/DetailDescription/DetailDescription'
 import { DetailWeightAndHeight } from '../../components/DetailWeightAndHeight/DetailWeightAndHeight'
+import { motion } from 'framer-motion'
 
 type Pokemon = {
     pokemon: any
@@ -15,7 +16,7 @@ type Pokemon = {
 
 function pokemonDetail({ pokemon, pokemonSpecies }: Pokemon) {
     return (
-        <>
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
             <DetailHeader pokemonName={pokemon.name} pokemonId={pokemon.id} />
             <DetailPokemonImage pokemonImageId={pokemon.id} pokemonName={pokemon.name} />
             <DetailDescription pokemonDescription={pokemonSpecies.flavor_text_entries[0].flavor_text.replace('', ' ')} />
@@ -34,7 +35,7 @@ function pokemonDetail({ pokemon, pokemonSpecies }: Pokemon) {
                     )
                 })}
             </DetailTypeSection>
-        </>
+        </motion.div>
     )
 }
 

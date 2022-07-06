@@ -7,6 +7,7 @@ export function SearchPokemon() {
   function submitSearch(e) {
     e.preventDefault()
     history.pushState({}, '', `/pokemon/${searchInput?.current?.value}`)
+    location.reload(); 
   }
 
   return (

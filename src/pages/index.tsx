@@ -1,10 +1,11 @@
 import { GetServerSideProps } from "next"
-import { PokemonList } from '../components/PokemonList/PokemonCard'
+import { PokemonCard } from '../components/PokemonCard/PokemonCard'
 import { Header } from '../components/Header/Header'
 import styles from './styles/index.module.css'
 import Link from 'next/link'
 import { ScrollToTop } from "../components/ScrollToTop/ScrollToTop"
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion"
 
 type Pokemons = {
   pokemons: any
@@ -22,8 +23,9 @@ function Home({ pokemons }: Pokemons) {
       }
     });
   }, []);
+
   return (
-    <>
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
       <Header />
       <section className={styles['pokemon-list']}>
         {pokemons.results.map((pokemon, i) => {
@@ -31,7 +33,7 @@ function Home({ pokemons }: Pokemons) {
           return (
             <Link href={`/pokemon/${pokemonId}`} key={pokemon?.id}>
               <a rel="noopener">
-                <PokemonList pokemonId={pokemonId} pokemonName={pokemon?.name} pokemonImage={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonId}.png`}></PokemonList>
+                <PokemonCard pokemonId={pokemonId} pokemonName={pokemon?.name} pokemonImage={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonId}.png`}></PokemonCard>
               </a>
             </Link>
           )
@@ -40,7 +42,7 @@ function Home({ pokemons }: Pokemons) {
       {showButton && (
         <ScrollToTop />
       )}
-    </>
+    </motion.div>
   )
 }
 
